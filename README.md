@@ -417,8 +417,8 @@ docker exec -it mongodb mongodump --out /backup
 
 ## Contribuidores
 - Madero Torres, Eduardo Federico
-- Cristian Tepedino
-- Luca Bloise
+- Tepedino, Cristian
+- Bloise, Luca
 
 ## Documentación Adicional
 - [MongoDB Documentation](https://docs.mongodb.com/)
