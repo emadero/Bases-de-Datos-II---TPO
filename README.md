@@ -130,6 +130,7 @@ curl http://localhost:3000/api/clientes/report/cantidad-facturas
 o en Postman:
 - GET http://localhost:3000/api/clientes/report/cantidad-facturas
 
+### 7. Obtener facturas compradas por Kai Bullock
 ```bash
 curl http://localhost:3000/api/facturas/cliente/kai-bullock
 ```
