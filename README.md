@@ -201,27 +201,35 @@ o en Postman:
 
 #### Modificar Cliente
 ```bash
-curl -X PUT http://localhost:3000/api/clientes/1 \
+curl -X PUT http://localhost:3000/api/clientes/ID_CLIENTE \
   -H "Content-Type: application/json" \
   -d '{
-    "direccion": "Nueva Dirección 456"
+    "numero": 1,
+    "nombre": "Juan",
+    "apellido": "Pérez",
+    "direccion": "Nueva Direccion 456",
+    "telefonos": ["1234-5678"]
   }'
 ```
 o en Postman:
-- PUT http://localhost:3000/api/clientes/1
+- PUT http://localhost:3000/api/clientes/ID_CLIENTE
 - Body (JSON):
 ```json
 {
-  "direccion": "Nueva Dirección 456"
+  "numero": 1,
+  "nombre": "Juan",
+  "apellido": "Pérez",
+  "direccion": "Nueva Direccion 456",
+  "telefonos": ["1234-5678"]
 }
 ```
 
 #### Eliminar Cliente
 ```bash
-curl -X DELETE http://localhost:3000/api/clientes/1
+curl -X DELETE http://localhost:3000/api/clientes/ID_CLIENTE
 ```
 o en Postman:
-- DELETE http://localhost:3000/api/clientes/1
+- DELETE http://localhost:3000/api/clientes/ID_CLIENTE
 
 ### 14. CRUD de Productos
 
@@ -250,6 +258,31 @@ o en Postman:
 }
 ```
 
+#### Modificar Producto
+```bash
+curl -X PUT http://localhost:3000/api/productos/ID_PRODUCTO \
+  -H "Content-Type: application/json" \
+  -d '{
+    "codigo": "P001",
+    "nombre": "Producto 1",
+    "marca": "Ipsum",
+    "precio": 100.00,
+    "descripcion": "Nueva Descripción del producto"
+  }'
+```
+o en Postman:
+- PUT http://localhost:3000/api/productos/ID_PRODUCTO
+- Body (JSON):
+```json
+{
+  "codigo": "P001",
+  "nombre": "Producto 1",
+  "marca": "Ipsum",
+  "precio": 100.00,
+  "descripcion": "Nueva Descripción del producto"
+}
+```
+
 ### 15. CRUD de Facturas
 
 #### Crear Factura
@@ -263,12 +296,14 @@ curl -X POST http://localhost:3000/api/facturas \
       {
         "producto_id": "ID_PRODUCTO",
         "cantidad": 2,
-        "precio_unitario": 100000
+        "precio_unitario": 100000,
+        "subtotal": 200000
       },
       {
         "producto_id": "ID_PRODUCTO_2",
         "cantidad": 1,
-        "precio_unitario": 45000
+        "precio_unitario": 45000,
+        "subtotal": 45000
       }
     ],
     "subtotal": 245000
@@ -287,12 +322,14 @@ Body (raw JSON):
     {
       "producto_id": "ID_PRODUCTO",
       "cantidad": 2,
-      "precio_unitario": 100000
+      "precio_unitario": 100000,
+      "subtotal": 200000
     },
     {
       "producto_id": "ID_PRODUCTO_2",
       "cantidad": 1,
-      "precio_unitario": 45000
+      "precio_unitario": 45000,
+      "subtotal": 45000
     }
   ],
   "subtotal": 245000
