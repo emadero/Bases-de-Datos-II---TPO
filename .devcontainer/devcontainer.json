@@ -1,33 +1,16 @@
 {
-  "name": "BD2-TPO Dev Container",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "features": {
-    "ghcr.io/devcontainers/features/mongodb:1": {},
-    "ghcr.io/devcontainers/features/redis:1": {}
-  },
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
-  "postCreateCommand": "npm install",
+  "name": "MongoDB and Redis Dev Environment",
+  "dockerComposeFile": "../docker/docker-compose.yml",
+  "service": "mongodb",
+  "workspaceFolder": "/workspace",
   "customizations": {
     "vscode": {
       "extensions": [
-        "ms-vscode.vscode-typescript-next",
         "mongodb.mongodb-vscode",
-        "formulahendry.auto-close-tag",
-        "formulahendry.auto-rename-tag"
+        "ms-azuretools.vscode-docker"
       ]
     }
   },
-  "portsAttributes": {
-    "27017": {
-      "label": "MongoDB",
-      "onAutoForward": "notify"
-    },
-    "6379": {
-      "label": "Redis",
-      "onAutoForward": "notify"
-    }
-  },
-  "ports": [27017, 6379]
+  "ports": [27017, 6379],
+  "postCreateCommand": "npm install"
 }
