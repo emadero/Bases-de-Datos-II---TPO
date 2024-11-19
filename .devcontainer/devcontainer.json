@@ -5,6 +5,9 @@
     "ghcr.io/devcontainers/features/mongodb:1": {},
     "ghcr.io/devcontainers/features/redis:1": {}
   },
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
   "postCreateCommand": "npm install",
   "customizations": {
     "vscode": {
@@ -25,5 +28,6 @@
       "label": "Redis",
       "onAutoForward": "notify"
     }
-  }
+  },
+  "ports": [27017, 6379]
 }
