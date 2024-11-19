@@ -1,12 +1,10 @@
-// src/services/factura.service.js
 const Factura = require('../models/factura.model');
 const Cliente = require('../models/cliente.model');
 
 class FacturaService {
-  // CRUD Básico
+
   async crear(data) {
     try {
-      // Calcular el IVA y total
       data.iva = data.subtotal * 0.21; // 21% IVA
       data.total = data.subtotal + data.iva;
       
@@ -37,9 +35,6 @@ class FacturaService {
     }
   }
 
-  // Requerimientos Específicos
-
-  // 7. Facturas de Kai Bullock
   async obtenerFacturasKaiBullock() {
     try {
       const cliente = await Cliente.findOne({
@@ -58,7 +53,6 @@ class FacturaService {
     }
   }
 
-  // 9. Facturas con productos Ipsum
   async obtenerFacturasProductosIpsum() {
     try {
       return await Factura.aggregate([
@@ -81,7 +75,6 @@ class FacturaService {
     }
   }
 
-  // 11. Vista de facturas ordenadas por fecha
   async obtenerFacturasOrdenadasPorFecha() {
     try {
       return await Factura.find()

@@ -1,8 +1,6 @@
-// src/services/cliente.service.js
 const Cliente = require('../models/cliente.model');
 
 class ClienteService {
-  // CRUD Básico
   async crear(data) {
     try {
       const cliente = new Cliente(data);

@@ -1,4 +1,3 @@
-// src/controllers/cliente.controller.js
 const clienteService = require('../services/cliente.service');
 
 exports.crearCliente = async (req, res) => {

@@ -1,4 +1,3 @@
-// src/models/producto.model.js
 const mongoose = require('mongoose');
 
 const productoSchema = new mongoose.Schema({

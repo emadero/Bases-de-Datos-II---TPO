@@ -1,7 +1,5 @@
-// src/controllers/producto.controller.js
 const productoService = require('../services/producto.service');
 
-// CRUD Básico
 exports.crearProducto = async (req, res) => {
   try {
     const producto = await productoService.crear(req.body);
@@ -46,7 +44,6 @@ exports.actualizarProducto = async (req, res) => {
   }
 };
 
-// Requerimientos específicos
 exports.obtenerProductosFacturados = async (req, res) => {
   try {
     const productos = await productoService.obtenerProductosFacturados();

@@ -1,17 +1,14 @@
 db = db.getSiblingDB('facturacion');
 
-// Crear colecciones
 db.createCollection('clientes');
 db.createCollection('productos');
 db.createCollection('facturas');
 
-// Crear índices
 db.clientes.createIndex({ "nombre": 1, "apellido": 1 });
 db.productos.createIndex({ "codigo": 1 }, { unique: true });
 db.facturas.createIndex({ "fecha": 1 });
 db.facturas.createIndex({ "cliente_id": 1 });
 
-// Insertar datos de prueba
 db.clientes.insertMany([
   {
     numero: 1,

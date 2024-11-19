@@ -1,4 +1,3 @@
-// src/controllers/factura.controller.js
 const facturaService = require('../services/factura.service');
 
 exports.crearFactura = async (req, res) => {

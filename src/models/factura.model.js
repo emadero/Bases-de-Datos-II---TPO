@@ -1,4 +1,3 @@
-// src/models/factura.model.js
 const mongoose = require('mongoose');
 
 const facturaSchema = new mongoose.Schema({
